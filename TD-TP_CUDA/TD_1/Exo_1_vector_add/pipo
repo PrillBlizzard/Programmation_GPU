@@ -1,0 +1,82 @@
+==PROF== Connected to process 7482 (/home/gc998856/Documents/TD-TP_CUDA/TD_1/vector_add_naif)
+==PROF== Profiling "vector_add_naive" - 0: 0%....50%....100% - 8 passes
+Naive Vector Add: 174.763 ms
+Check: OK
+==PROF== Disconnected from process 7482
+[7482] vector_add_naif@127.0.0.1
+  vector_add_naive(float *, float *, float *, int) (4096, 1, 1)x(256, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         6,00
+    SM Frequency            cycle/nsecond         1,42
+    Elapsed Cycles                  cycle      199 773
+    Memory Throughput                   %        93,35
+    DRAM Throughput                     %        93,35
+    Duration                      usecond       140,96
+    L1/TEX Cache Throughput             %        29,95
+    L2 Cache Throughput                 %        25,86
+    SM Active Cycles                cycle   189 690,67
+    Compute (SM) Throughput             %        22,90
+    ----------------------- ------------- ------------
+
+    INF   The kernel is utilizing greater than 80.0% of the available compute or memory performance of the device. To   
+          further improve performance, work will likely need to be shifted from the most utilized to another unit.      
+          Start by analyzing DRAM in the Memory Workload Analysis section.                                              
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                  4 096
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte            8,19
+    Driver Shared Memory Per Block       Kbyte/block            1,02
+    Dynamic Shared Memory Per Block       byte/block               0
+    Static Shared Memory Per Block        byte/block               0
+    # SMs                                         SM               6
+    Threads                                   thread       1 048 576
+    Uses Green Context                                             0
+    Waves Per SM                                              113,78
+    -------------------------------- --------------- ---------------
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           48
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        87,16
+    Achieved Active Warps Per SM           warp        41,84
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 12.84%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (87.2%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+    Section: GPU and Memory Workload Distribution
+    -------------------------- ----------- ------------
+    Metric Name                Metric Unit Metric Value
+    -------------------------- ----------- ------------
+    Average DRAM Active Cycles       cycle      789 112
+    Total DRAM Elapsed Cycles        cycle    1 690 624
+    Average L1 Active Cycles         cycle   189 690,67
+    Total L1 Elapsed Cycles          cycle    1 144 854
+    Average L2 Active Cycles         cycle   179 914,12
+    Total L2 Elapsed Cycles          cycle    1 521 728
+    Average SM Active Cycles         cycle   189 690,67
+    Total SM Elapsed Cycles          cycle    1 144 854
+    Average SMSP Active Cycles       cycle      189 588
+    Total SMSP Elapsed Cycles        cycle    4 579 416
+    -------------------------- ----------- ------------
+
