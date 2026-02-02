@@ -1,0 +1,12 @@
+names:
+- Human
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: human-dectection
+  url: https://universe.roboflow.com/lazydevs/human-dectection/dataset/4
+  version: 4
+  workspace: lazydevs
+test: ../test/images
+train: ../train/images
+val: ../valid/images
